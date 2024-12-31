@@ -1,26 +1,25 @@
+// ServiceDistributionChart.jsx
 import { motion } from "framer-motion";
 import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer, Legend } from "recharts";
 
 const categoryData = [
-	{ name: "Electronics", value: 4500 },
-	{ name: "Clothing", value: 3200 },
-	{ name: "Home & Garden", value: 2800 },
-	{ name: "Books", value: 2100 },
-	{ name: "Sports & Outdoors", value: 1900 },
+	{ name: "Parking", value: 500 },
+	{ name: "Hostel Bookings", value: 300 },
+	{ name: "Airport Services", value: 200 },
 ];
 
-const COLORS = ["#6366F1", "#8B5CF6", "#EC4899", "#10B981", "#F59E0B"];
+const COLORS = ["#6366F1", "#10B981", "#F59E0B"];
 
-const CategoryDistributionChart = () => {
+const ServiceDistributionChart = () => {
 	return (
 		<motion.div
-			className='bg-white shadow-lg rounded-xl p-6 border border-gray-200'
+			className="bg-white shadow-lg rounded-xl p-6 border border-gray-200"
 			initial={{ opacity: 0, y: 20 }}
 			animate={{ opacity: 1, y: 0 }}
 			transition={{ delay: 0.3 }}
 		>
-			<h2 className='text-lg font-medium mb-4 text-gray-800'>Category Distribution</h2>
-			<div className='h-80'>
+			<h2 className="text-lg font-medium mb-4 text-gray-800">Service Distribution</h2>
+			<div className="h-80">
 				<ResponsiveContainer width={"100%"} height={"100%"}>
 					<PieChart>
 						<Pie
@@ -29,8 +28,8 @@ const CategoryDistributionChart = () => {
 							cy={"50%"}
 							labelLine={false}
 							outerRadius={80}
-							fill='#8884d8'
-							dataKey='value'
+							fill="#8884d8"
+							dataKey="value"
 							label={({ name, percent }) => `${name} ${(percent * 100).toFixed(0)}%`}
 						>
 							{categoryData.map((entry, index) => (
@@ -52,4 +51,4 @@ const CategoryDistributionChart = () => {
 	);
 };
 
-export default CategoryDistributionChart;
+export default ServiceDistributionChart;

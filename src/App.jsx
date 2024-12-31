@@ -3,7 +3,7 @@ import { Route, Routes, useLocation } from "react-router-dom";
 import Sidebar from "./components/common/Sidebar";
 
 import OverviewPage from "./pages/OverviewPage";
-import ProductsPage from "./pages/ProductsPage";
+import ProductsMangementPage from "./pages/ParkingManagementPage";
 import UsersPage from "./pages/UsersPage";
 import SalesPage from "./pages/SalesPage";
 import OrdersPage from "./pages/OrdersPage";
@@ -32,12 +32,13 @@ function App() {
       >
         <Routes>
           <Route path="/" element={<OverviewPage />} />
-          <Route path="/products" element={<ProductsPage />} />
-          <Route path="/users" element={<UsersPage />} />
-          <Route path="/sales" element={<SalesPage />} />
-          <Route path="/orders" element={<OrdersPage />} />
-          <Route path="/analytics" element={<AnalyticsPage />} />
+          <Route path="/parking-management" element={<ProductsMangementPage />} />
+          <Route path="/hotel-management" element={<OrdersPage />} />
+          <Route path="/bookings" element={<SalesPage />} />
+          <Route path="/customers" element={<UsersPage />} />
+          <Route path="/revenue-analytics" element={<AnalyticsPage />} />
           <Route path="/settings" element={<SettingsPage />} />
+		  <Route path="/location-overview" element={<SalesPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/forgot-password" element={<ForgetPasswordPage />} />
